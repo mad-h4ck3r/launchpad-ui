@@ -1,7 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 @import './ButtonVariables.css';
 
-.Button {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
   min-height: 3.2rem;
 }
 
-.Button--tiny {
+.tiny {
   border-radius: var(--Button-border-radius-small);
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
@@ -33,7 +33,7 @@
   min-height: 1.9rem;
 }
 
-.Button--small {
+.small {
   border-radius: var(--Button-border-radius-small);
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
@@ -41,44 +41,43 @@
   min-height: 2.5rem;
 }
 
-.Button--big {
+.big {
   font-size: var(--Button-font-size-large);
   line-height: var(--Button-line-height-large);
   padding: 1rem 1.4rem;
   min-height: 4rem;
 }
 
-.Button--fit {
+.fit {
   display: block;
   width: 100%;
 }
 
-.Button:not(.Button--icon) > .Button-icon {
+.button:not(.icon) > .icon {
   vertical-align: middle;
 }
 
-.Button:not(.Button--icon) > .Button-icon:first-child {
+.button:not(.icon) > .icon:first-child {
   margin-right: 0.5rem;
 }
 
-.Button:not(.Button--icon) > .Button-icon:last-child {
+.button:not(.icon) > .icon:last-child {
   margin-left: 0.5rem;
 }
 
-.Button:hover {
+.button:hover {
   cursor: pointer;
 }
 
-.Button:focus,
-.Dropdown-trigger:focus .Button--menu {
+.button:focus {
   border-radius: var(--Button-border-radius-default);
   box-shadow: var(--Button-box-shadow-focus);
   outline: 0;
   z-index: 2;
 }
 
-.Button--tiny:focus,
-.Button--small:focus {
+.tiny:focus,
+.small:focus {
   border-radius: var(--Button-border-radius-small);
 }
 
@@ -86,34 +85,34 @@
 
 /* ------- DEFAULT ------- */
 
-.Button--default {
+.default {
   background-color: var(--Button-color-background-default);
   border-color: var(--Button-color-border-default);
   color: var(--Button-color-text-default);
 }
 
-.Button--default .Button-icon {
+.default .icon {
   fill: var(--Button-icon-color-fill-default);
 }
 
-.Button--icon.Button--default .Button-icon {
+.icon.default .icon {
   background-color: transparent;
   color: var(--Button-icon-color-text-default);
 }
 
-.Button--default:hover,
-.Button--icon.Button--default:hover {
+.default:hover,
+.icon.default:hover {
   background-color: var(--Button-color-background-default-hover);
   color: var(--Button-color-text-default-hover);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--default:focus {
+.default:focus {
   background-color: var(--Button-color-background-default-focus);
 }
 
-.Button--icon.Button--default:active,
-.Button--default:active {
+.icon.default:active,
+.default:active {
   background-color: var(--Button-color-background-default-active);
   box-shadow: var(--Button-box-shadow-active);
   color: var(--Button-color-text-default-active);
@@ -121,77 +120,77 @@
 
 /* ------- PRIMARY, ICON, SUBMIT, MINIMAL ------- */
 
-.Button--primary {
+.primary {
   background-color: var(--Button-color-background-primary);
   border-color: var(--Button-color-border-primary);
   color: var(--Button-color-text-primary);
 }
 
-.Button--primary:hover {
+.primary:hover {
   background-color: var(--Button-color-background-primary-hover);
   color: var(--Button-color-text-primary-hover);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--icon.Button--primary {
+.icon.primary {
   background-color: var(--Button-color-background-primary-withIcon);
   border: 1px solid var(--Button-color-border-primary-withIcon);
   color: var(--Button-color-text-primary-withIcon);
 }
 
-.Button--icon.Button--primary:hover {
+.icon.primary:hover {
   background-color: var(--Button-color-background-primary-focus);
   border: 1px solid var(--Button-color-border-primary-focus);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--primary:focus,
-.Button--icon.Button--primary:focus {
+.primary:focus,
+.icon.primary:focus {
   background-color: var(--Button-color-background-primary-focus);
   border: 1px solid var(--Button-color-border-primary-focus);
 }
 
-.Button--primary:active {
+.primary:active {
   background-color: var(--Button-color-background-primary-active);
   box-shadow: var(--Button-box-shadow-active);
 }
 
-.Button--icon.Button--primary .Button-icon {
+.icon.primary .icon {
   fill: var(--Button-icon-color-fill-primary);
 }
 
-.Button--primary:hover .Button-icon,
-.Button--icon.Button--primary:hover .Button-icon {
+.primary:hover .icon,
+.icon.primary:hover .icon {
   fill: var(--Button-icon-color-fill-primary-hover);
 }
 
-.Button--icon.Button--primary:focus .Button-icon {
+.icon.primary:focus .icon {
   fill: var(--Button-icon-color-fill-primary-focus);
 }
 
-.Button--primary:active .Button-icon,
-.Button--icon.Button--primary:active .Button-icon {
+.primary:active .icon,
+.icon.primary:active .icon {
   fill: var(--Button-icon-color-fill-primary-active);
 }
 
 /* ------- MINIMAL ------- */
 
-.Button.Button--minimal {
+.minimal {
   background-color: transparent;
   color: var(--lp-color-text);
 }
 
-.Button.Button--minimal:hover,
-.Button--minimal:focus {
+.minimal:hover,
+.minimal:focus {
   background-color: var(--lp-color-gray-100);
 }
 
-.Button.Button--minimal:active {
+.minimal:active {
   background-color: var(--lp-color-gray-200);
 }
 
-.Button.Button--minimal[disabled],
-.Button.Button--minimal[disabled]:hover {
+.button.minimal[disabled],
+.button.minimal[disabled]:hover {
   background-color: transparent;
   border: none;
   color: var(--lp-color-gray-500);
@@ -199,33 +198,33 @@
 
 /* ------- CLOSE ICON BUTTON ------- */
 
-.Button.Button--close {
+.close {
   background-color: transparent;
   fill: var(--lp-color-gray-700);
 }
 
-.Button.Button--close svg {
+.close svg {
   fill: currentcolor;
 }
 
-.Button.Button--close:hover {
+.close:hover {
   background-color: rgb(33 33 33 / 0.1);
   box-shadow: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
 }
 
-.Button.Button--close:focus {
+.close:focus {
   background-color: hsl(0 0 100% / 0.1);
   box-shadow: 0 0 0 1px hsl(225 1.8% 43.5% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
 }
 
-.Button.Button--close:active {
+.close:active {
   background-color: hsl(0 0% 12.9% / 0.7);
   box-shadow: 0 0 0 1px var(--lp-color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
   color: var(--lp-color-text-inverse);
 }
 
-.Button.Button--close[disabled],
-.Button.Button--close[disabled]:hover {
+.button.close[disabled],
+.button.close[disabled]:hover {
   background-color: transparent;
   border: none;
   color: var(--lp-color-gray-500);
@@ -233,75 +232,75 @@
 
 /* ------- DESTRUCTIVE ------- */
 
-.Button--destructive {
+.destructive {
   background-color: var(--Button-color-background-destructive);
   border-color: var(--Button-color-border-destructive);
   color: var(--Button-color-text-destructive);
 }
 
-.Button--destructive:hover {
+.destructive:hover {
   background-color: var(--Button-color-background-destructive-hover);
   color: var(--Button-color-text-destructive-hover);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--destructive:focus {
+.destructive:focus {
   background-color: var(--Button-color-background-destructive-focus);
   box-shadow: var(--Button-box-shadow-focus);
 }
 
-.Button--destructive:active {
+.destructive:active {
   background-color: var(--Button-color-background-destructive-active);
   box-shadow: var(--Button-box-shadow-active);
   color: var(--Button-color-text-destructive-active);
 }
 
-.Button--destructive .Button-icon {
+.destructive .icon {
   fill: var(--Button-icon-color-fill-destructive);
 }
 
-.Button--destructive:hover .Button-icon {
+.destructive:hover .icon {
   fill: var(--Button-icon-color-fill-destructive-hover);
 }
 
-.Button--destructive:active .Button-icon {
+.destructive:active .icon {
   fill: var(--Button-icon-color-fill-destructive-active);
 }
 
-.Button--icon.Button--destructive {
+.icon.destructive {
   border-color: var(--Button-color-border-destructive-withIcon);
 }
 
-.Button--icon.Button--destructive:hover {
+.icon.destructive:hover {
   background-color: var(--Button-color-background-destructive-withIcon-hover);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--icon.Button--destructive:focus {
+.icon.destructive:focus {
   background-color: var(--Button-color-background-destructive-withIcon-focus);
   box-shadow: var(--Button-box-shadow-focus);
 }
 
-.Button--icon.Button--destructive .Button-icon {
+.icon.destructive .icon {
   fill: var(--Button-icon-color-fill-destructive);
 }
 
-.Button--icon.Button--destructive:hover .Button-icon {
+.icon.destructive:hover .icon {
   fill: var(--Button-icon-color-fill-destructive-hover);
 }
 
-.Button--icon.Button--destructive:focus .Button-icon {
+.icon.destructive:focus .icon {
   fill: var(--Button-icon-color-fill-destructive-focus);
 }
 
-.Button--icon.Button--destructive:active .Button-icon {
+.icon.destructive:active .icon {
   fill: var(--Button-icon-color-fill-destructive-active);
 }
 
 /* ------- LINK ------- */
 
 /* Inherit line height from current font size */
-.Button--link {
+.link {
   text-transform: none;
   text-decoration: underline;
   letter-spacing: 0;
@@ -317,56 +316,39 @@
   min-height: auto;
 }
 
-.Button--link:focus {
+.link:focus {
   outline: none;
   border-radius: var(--Button-border-radius-link);
   border-color: transparent;
   box-shadow: var(--Button-box-shadow-link-focus);
 }
 
-.Button--link:hover,
-.Button--link:active {
+.link:hover,
+.link:active {
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
   color: var(--lp-color-link); /* do we have a different color here by theme? */
 }
 
-.Button--link:active {
+.link:active {
   box-shadow: var(--Button-box-shadow-link-active);
   color: var(--Button-color-link-active);
   text-decoration: underline;
 }
 
-.Button--link[disabled] {
+.link[disabled] {
   color: var(--Button-color-link-disabled);
   text-decoration: none;
 }
 
-.Button--link[disabled]:hover {
+.link[disabled]:hover {
   color: var(--Button-color-link-disabled-hover);
-}
-
-/* ------- CLEAR ------- */
-
-/* Set the color for the clear button in search bars */
-
-.Button--clear .Button-icon {
-  fill: var(--Button-icon-clear-color-fill);
-  color: var(--Button-icon-clear-color-text);
-}
-
-.Button--clear:focus {
-  outline: 0;
-}
-
-.Button--iconFirst {
-  vertical-align: top;
 }
 
 /* ------- DISABLED ------- */
 
-.Button[disabled] {
+.button[disabled] {
   cursor: not-allowed;
   box-shadow: none;
   background-color: var(--Button-color-background-disabled);
@@ -375,7 +357,7 @@
 }
 
 /* Why are we adding states to a disabled button? */
-.Button[disabled]:hover {
+.button[disabled]:hover {
   cursor: not-allowed;
   box-shadow: none;
   background-color: var(--Button-color-background-disabled-hover);
@@ -383,7 +365,7 @@
   border-color: var(--Button-color-border-disabled);
 }
 
-.Button[disabled]:active {
+.button[disabled]:active {
   cursor: not-allowed;
   box-shadow: none;
   background-color: var(--Button-color-background-disabled-active);
@@ -391,11 +373,11 @@
   border-color: var(--Button-color-border-disabled);
 }
 
-.Button[disabled] .Button-icon {
+.button[disabled] .icon {
   fill: var(--Button-icon-color-fill-disabled);
 }
 
-.Button.Button--icon {
+.icon {
   padding: 0;
   line-height: 1;
   border-radius: 50%;
@@ -405,8 +387,55 @@
   flex-shrink: 0;
 }
 
-.Button.Button--icon.Button--small {
+.icon:focus {
+  border-radius: 50%;
+}
+
+.icon.small {
   height: 2.2rem;
   width: 2.2rem;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.base {
+  gap: 1rem;
+}
+
+.large {
+  gap: 2rem;
+}
+
+.compact > .button + .button,
+.compact > [class*='_Popover-target_'] + .button,
+.compact > .button + [class*='_Popover-target_'],
+.compact > [class*='_Popover-target_'] + [class*='_Popover-target_'] {
+  margin-left: -1px;
+}
+
+.compact > .button + [class*='_Popover-target_'],
+.compact > [class*='_Popover-target_'] + [class*='_Popover-target_'] {
+  line-height: 1;
+}
+
+.compact > .button:not(:first-child),
+.compact > .button:not(:last-child),
+.compact > [class*='_Popover-target_']:not(:first-child),
+.compact > [class*='_Popover-target_']:not(:last-child) {
+  border-radius: 0;
+}
+
+.compact > .button:first-child,
+.compact > [class*='_Popover-target_']:first-child button {
+  border-radius: var(--lp-border-radius) 0 0 var(--lp-border-radius);
+}
+
+.compact > .button:last-child,
+.compact > [class*='_Popover-target_']:last-child button {
+  border-radius: 0 var(--lp-border-radius) var(--lp-border-radius) 0;
 }
 /* stylelint-enable no-descending-specificity */

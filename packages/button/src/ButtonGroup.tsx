@@ -2,21 +2,21 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/ButtonGroup.css';
+import styles from './styles/Button.module.css';
 
 type ButtonGroupProps = HTMLAttributes<HTMLDivElement> & {
-  spacing?: 'compact' | 'normal' | 'large';
+  spacing?: 'compact' | 'base' | 'large';
   'data-test-id'?: string;
 };
 
 const ButtonGroup = ({
-  spacing = 'normal',
+  spacing = 'base',
   className,
   children,
   'data-test-id': testId = 'button-group',
   ...rest
 }: ButtonGroupProps) => {
-  const classes = cx('ButtonGroup', `ButtonGroup--${spacing}`, className);
+  const classes = cx(styles.group, styles[`${spacing}`], className);
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>

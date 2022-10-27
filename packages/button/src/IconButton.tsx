@@ -11,7 +11,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
-import './styles/Button.css';
+import styles from './styles/Button.module.css';
 
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'close';
@@ -41,12 +41,10 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
   const Component: ElementType = asChild ? Slot : 'button';
 
   const classes = cx(
-    'IconButton',
-    'Button',
-    'Button--icon',
-    `Button--${kind}`,
-    disabled && 'Button--disabled',
-    size && `Button--${size}`,
+    styles.button,
+    styles.icon,
+    styles[`${kind}`],
+    size && size !== 'normal' && styles[`${size}`],
     className
   );
 

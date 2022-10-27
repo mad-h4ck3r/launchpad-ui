@@ -12,7 +12,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
-import './styles/Button.css';
+import styles from './styles/Button.module.css';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
@@ -50,11 +50,10 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
   const Component: ElementType = asChild ? Slot : 'button';
 
   const classes = cx(
-    'Button',
-    `Button--${kind}`,
-    disabled && 'Button--disabled',
-    size && `Button--${size}`,
-    fit && 'Button--fit',
+    styles.button,
+    styles[`${kind}`],
+    size && size !== 'normal' && styles[`${size}`],
+    fit && styles.fit,
     className
   );
 
@@ -64,7 +63,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
       key: 'icon',
       size: icon.props.size || 'small',
       'aria-hidden': true,
-      className: cx(icon.props.className, 'Button-icon'),
+      className: cx(icon.props.className, styles.icon),
     });
 
   const getFinalChildren = (c: ReactNode) => [
